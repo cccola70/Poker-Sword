@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+  <title>Sword &amp; Poker</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="phone">
+
+    <section id="screen-title" class="screen">
+      <h1 class="logo">Sword <span class="amp">&amp;</span> Poker</h1>
+      <p class="tagline">Arrange the deadliest hand. Strike the killing blow.</p>
+      <div class="menu-card">
+        <button id="btn-new-game" class="btn btn-primary">New Game</button>
+        <p class="hint">Swap adjacent cards to build a poker hand in the glowing row, then Attack!</p>
+      </div>
+    </section>
+
+    <section id="screen-town" class="screen hidden">
+      <h2 class="section-title">🏕️ Camp</h2>
+      <div class="stat-panel">
+        <div class="stat-row"><span>Level</span><strong id="town-level"></strong></div>
+        <div class="stat-row"><span>HP</span><strong id="town-hp"></strong></div>
+        <div class="stat-row"><span>EXP</span><strong id="town-exp"></strong></div>
+        <div class="stat-row"><span>Gold</span><strong id="town-gold">💰</strong></div>
+        <div class="stat-row"><span>Sword Level</span><strong id="town-sword"></strong></div>
+      </div>
+
+      <div class="shop">
+        <button id="btn-upgrade" class="btn btn-shop">
+          ⚔️ Sharpen Sword <span id="upgrade-cost"></span>
+        </button>
+        <button id="btn-heal" class="btn btn-shop">
+          🛌 Rest at Camp <span id="heal-cost"></span>
+        </button>
+      </div>
+
+      <div id="next-enemy-preview" class="enemy-preview"></div>
+
+      <button id="btn-next-battle" class="btn btn-primary">Continue ▶</button>
+      <div id="town-log" class="log"></div>
+    </section>
+
+    <section id="screen-battle" class="screen hidden">
+      <div class="combatant enemy-panel">
+        <div class="combatant-name"><span id="enemy-emoji"></span> <span id="enemy-name"></span></div>
+        <div class="hp-bar"><div id="enemy-hp-fill" class="hp-fill"></div></div>
+        <div class="hp-text"><span id="enemy-hp-text"></span></div>
+      </div>
+
+      <div id="battle-log" class="log"></div>
+
+      <div class="grid-wrap">
+        <div id="grid" class="grid"></div>
+      </div>
+
+      <div class="battle-controls">
+        <div class="swaps-left">Swaps left: <strong id="swaps-left"></strong></div>
+        <button id="btn-attack" class="btn btn-attack">⚔️ Attack!</button>
+      </div>
+
+      <div class="combatant player-panel">
+        <div class="combatant-name">🤺 <span id="player-name">You</span> — Lv.<span id="player-level"></span></div>
+        <div class="hp-bar"><div id="player-hp-fill" class="hp-fill player"></div></div>
+        <div class="hp-text"><span id="player-hp-text"></span></div>
+        <div class="mini-stats">
+          <span>💰<span id="player-gold"></span></span>
+          <span>⚔️Lv<span id="player-sword"></span></span>
+          <span id="block-indicator" class="block-indicator hidden">🛡️ Guard Up</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-gameover" class="screen hidden">
+      <h2 class="section-title">💀 You Have Fallen</h2>
+      <p id="gameover-stats"></p>
+      <button id="btn-restart" class="btn btn-primary">Try Again</button>
+    </section>
+
+    <section id="screen-victory" class="screen hidden">
+      <h2 class="section-title">👑 The Dragon Falls</h2>
+      <p>Your blade has ended the Ancient Dragon's reign. The realm is safe... for now.</p>
+      <p id="victory-stats"></p>
+      <button id="btn-endless" class="btn btn-primary">Continue in Endless Mode ▶</button>
+    </section>
+
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
